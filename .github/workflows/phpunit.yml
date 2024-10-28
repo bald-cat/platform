@@ -73,12 +73,10 @@ jobs:
       - name: Make SQLite database
         run: vendor/bin/testbench-dusk workbench:create-sqlite-db
 
-      - uses: browser-actions/setup-chrome@v1
-        with:
-          install-chromedriver: true
-
       - name: Update Dusk Chromedriver
-        run: vendor/bin/dusk-updater detect --auto-update
+        run:
+          vendor/bin/dusk-updater update
+          vendor/bin/dusk-updater detect
 
       - name: Execute Unit Tests
         run: vendor/bin/phpunit --testsuite=Browser --no-coverage --disable-coverage-ignore
