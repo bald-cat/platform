@@ -49,8 +49,8 @@ abstract class TestBrowserCase extends TestCase
 
         config()->set('platform.prevents_abandonment', false);
 
-       // if (isset($_SERVER['RUNNING_IN_CI'])) {
-            Options::withoutUI();
+        // if (isset($_SERVER['RUNNING_IN_CI'])) {
+        Options::withoutUI();
         //}
     }
 
